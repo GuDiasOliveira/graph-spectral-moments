@@ -40,8 +40,29 @@ chmod +x spectral-moments
 
 You can convert it to symmetric.
 
-1. You must install [Python](https://www.python.org/)
+1. Install [Python](https://www.python.org/)
 2. Run the program
 ```bash
 python3 symmetric-edges.py < non-symmetric-input.txt | ./spectral-moments [spectral-moments]
+```
+
+## Sample inputs generation
+
+There are some Python scripts to generate random sample inputs.
+
+You'll need install [Python](https://www.python.org/).
+
+1. Generate Barabasi complex network
+```bash
+python3 simulate-barabasi.py [n] [m]
+```
+
+2. Generate Erdos complex network
+```bash
+python3 simulate-erdos.py [n] [p]
+```
+
+3. Generate Watts Strogatz complex network
+```bash
+python3 simulate-watts-strogatz.py [n] [m] [k]
 ```
