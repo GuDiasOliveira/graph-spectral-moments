@@ -6,7 +6,6 @@
 2. **Unweighted** graph;
 3. Graph with **no loops**;
 4. Graph with **no multiple edges** for the same pair of nodes;
-5. Calculation of just **10 first spectral moments**.
 
 ## Input format
 
@@ -32,9 +31,9 @@ gcc spectral-moments.c -o spectral-moments
 ```bash
 chmod +x spectral-moments
 ```
-3. Run program
+3. Run program. Where `[spectral-moments]` is the number of first spectral moments to calculate, defaulted to 10.
 ```bash
-./spectral-moments < input-file.txt
+./spectral-moments [spectral-moments] < input-file.txt
 ```
 
 ## For non-symmetric inputs
@@ -44,5 +43,5 @@ You can convert it to symmetric.
 1. You must install [Python](https://www.python.org/)
 2. Run the program
 ```bash
-python3 symmetric-edges.py < non-symmetric-input.txt | ./spectral-moments
+python3 symmetric-edges.py < non-symmetric-input.txt | ./spectral-moments [spectral-moments]
 ```

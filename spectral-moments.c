@@ -236,17 +236,17 @@ double* approxSpectralMoments(t_edge *edges, long edges_count, t_edges_range *ra
 }
 
 
-#define l 10
 #define s 20000
 //#define s 1000000
 
 int main(int argc, char** argv)
 {
-    FILE* file = argc >= 2 ? fopen(argv[1], "r") : stdin;
+    FILE* file = stdin;
     clock_t runStart, runEnd;
 
     long n;
     fscanf(file, "%ld", &n);
+    long l = argc >= 2 ? atoi(argv[1]) : 10;
 
     long edges_count = 0;
     t_edge *edges = NULL;
