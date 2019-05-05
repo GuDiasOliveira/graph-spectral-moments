@@ -41,7 +41,7 @@ chmod +x spectral-moments
 
 You can convert it to symmetric.
 
-1. You must intall [Python](https://www.python.org/)
+1. You must install [Python](https://www.python.org/)
 2. Run the program
 ```bash
 python3 symmetric-edges.py < non-symmetric-input.txt | ./spectral-moments
