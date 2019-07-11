@@ -3,9 +3,8 @@
 ## Constraints
 
 1. **Undirected** graph;
-2. **Unweighted** graph;
-3. Graph with **no loops**;
-4. Graph with **no multiple edges** for the same pair of nodes;
+2. Graph with **no loops**;
+3. Graph with **no multiple edges** for the same pair of nodes;
 
 ## Input format
 
@@ -13,13 +12,13 @@ First, input the number of nodes of the graph. Then, input its edges.
 
 ```
 [number-of-nodes]
-[source-node] [destination-node]
-[source-node] [destination-node]
-[source-node] [destination-node]
+[source-node] [destination-node] [edge-weight]
+[source-node] [destination-node] [edge-weight]
+[source-node] [destination-node] [edge-weight]
 ...
 ```
 
-For the algorithm to work, the edges input must be symmetric. For example, if the input has an edge `6 10`, so there must be another edge input `10 6`.
+For the algorithm to work, the edges input must be symmetric. For example, if the input has an edge `6 10 2.45`, so there must be another edge input `10 6 2.45` (**with the same weight value**).
 
 ## Compile and run
 
@@ -50,7 +49,7 @@ python3 symmetric-edges.py < non-symmetric-input.txt | ./spectral-moments [spect
 
 There are some Python scripts to generate random sample inputs.
 
-You'll need install [Python](https://www.python.org/).
+You'll need install [Python](https://www.python.org/) and the libraries [numpy](https://www.numpy.org/), [networkx](https://networkx.github.io/) and [scipy](https://www.scipy.org/).
 
 1. Generate Barabasi complex network
 ```bash
@@ -65,4 +64,9 @@ python3 simulate-erdos.py [n] [p]
 3. Generate Watts Strogatz complex network
 ```bash
 python3 simulate-watts-strogatz.py [n] [m] [k]
+```
+
+You can also pass the generated input directely to the program with pipe command operator. For example:
+```bash
+python3 simulate-barabasi.py 10 5 | ./spectral-moments 15
 ```
